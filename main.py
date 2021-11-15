@@ -3,18 +3,18 @@ def pop(mat):
     for i in range(len(mat)):
         for j in range(len(mat)-1):
             count=1
-            if(mat[i][j]=='-'):
-                break
-            for k in range(j+1,len(mat)):
-                if(not mat[i][j]==mat[i][k]):
-                    k-=1
-                    break
-                else:
-                    count+=1
-            if(count>2):
-                flag=True
-                for a in range(j,k+1):
-                    mat[i][a]='-'
+            if(not mat[i][j]=='-'):
+                
+                for k in range(j+1,len(mat)):
+                    if(not mat[i][j]==mat[i][k]):
+                        k-=1
+                        break
+                    else:
+                        count+=1
+                if(count>2):
+                    flag=True
+                    for a in range(j,k+1):
+                        mat[i][a]='-'
     return flag
 def sot(mat):
     for j in range(len(mat)):
